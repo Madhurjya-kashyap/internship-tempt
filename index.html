@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>calx <img src="images/temperature.png" alt=""></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img src="images/temperature.png" alt="">TempX</label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="converter">
+            <div class="con-img-x">
+                <img src="images/flexy-young-woman-jumping-into-virtual-reality.png" alt="">
+
+            </div>
+            <label for="temp">Enter Temperature:</label>
+            <input type="number" id="temp" placeholder="Enter value">
+            
+            <label for="scale">Select Scale:</label>
+            <select id="scale">
+                <option value="Celsius">Celsius to Fahrenheit</option>
+                <option value="Fahrenheit">Fahrenheit to Celsius</option>
+            </select>
+            
+            <button onclick="convertTemp()">Convert</button>
+            <div class="result" id="result"></div>
+         
+
+        </div>
+    </div>
+    <div class="about">
+        <h1>TempX <span>Converter</span></h1>
+      
+       
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/857665ea-8a48-42ae-b64b-21cf08031bb9/rQgi7om3jP.json" background="##fff" speed="1" style="width: 700px; height: 700px" loop autoplay direction="1" mode="normal"></lottie-player>
+          
+    </div>
+    <main>
+        
+    </main>
+    <script>
+        function convertTemp() {
+            const temp = parseFloat(document.getElementById("temp").value);
+            const scale = document.getElementById("scale").value;
+            let result;
+        
+            if (isNaN(temp)) {
+                result = "Please enter a valid temperature.";
+                alert("please enter the value!!");
+            } else {
+                if (scale === "Celsius") {
+                    result = `${temp}°C is ${(temp * 9/5 + 32).toFixed(2)}°F`;
+                } else if (scale === "Fahrenheit") {
+                    result = `${temp}°F is ${((temp - 32) * 5/9).toFixed(2)}°C`;
+                }
+            }
+        
+            document.getElementById("result").innerText = result;
+            document.getElementById("result").remove=result;
+            function tTemp(){
+               const xc=  document.getElementById("res");
+                document.body.xc.remove();
+            }
+        }
+        
+    </script>
+  </body>
+</html>
